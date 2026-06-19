@@ -19,21 +19,47 @@
             line-height: 1.8; 
             background-color: #FAF9F5; 
         }
-        h1 { 
-            font-family: "Playfair Display", Georgia, serif;
-            color: #1E3A27; 
-            font-weight: 600; 
-            font-size: 2.6rem; 
-            margin-bottom: 8px;
-            letter-spacing: -0.01em;
+        /* Hero Banner Container */
+        .hero-banner {
+            position: relative;
+            background-image: url('SPS_Radiansome100Cream_Image_1.png'); /* Swap this with any background image name you like */
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(44, 62, 46, 0.05);
         }
-        .subtitle {
-            font-family: "Playfair Display", Georgia, serif;
+
+        /* Dark overlay to make white text pop beautifully against the image */
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 58, 39, 0.85), rgba(44, 62, 46, 0.6));
+            z-index: 1;
+        }
+
+        /* Forces content above the overlay */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Updated H1 inside the Banner */
+        .hero-content h1 { 
+            color: #FAF9F5; /* Changed to cream/white for high contrast */
+            font-size: 2.5rem; 
+            margin: 0 0 12px 0;
+        }
+
+        /* Bigger, bolder Subtitle */
+        .hero-content .subtitle {
+            font-size: 1.4rem; /* Significantly larger */
+            font-weight: 500;
+            color: #D4AF37; /* Elegant gold accent color */
             font-style: italic;
-            font-size: 1.15rem;
-            color: #707A71;
-            margin-bottom: 30px;
-            letter-spacing: 0.02em;
+            margin: 0;
         }
         .divider {
             height: 2px;
@@ -129,9 +155,14 @@
 </head>
 <body>
 
-    <h1>Radiance, Curated by Sunnypath Solutions:</h1>
-    <div class="subtitle">Your Path to Natural, Healthy Skin</div>
-    <div class="divider"></div>
+    <div class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Radiance, Curated by Sunnypath Solutions</h1>
+            <div class="subtitle">Your Path to Natural, Healthy Skin</div>
+        </div>
+    </div>
+    <!-- No need for the old divider anymore, as the banner creates its own structural break! -->
 
     <p>True success is built on a foundation of sustained vitality, deep internal alignment, and spatial harmony. This portal offers a curated entry point into wellness frameworks designed specifically for high-achievers who want to navigate life's transitions with grace, clarity, and unwavering energy.</p>
     

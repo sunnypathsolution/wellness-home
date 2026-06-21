@@ -91,7 +91,51 @@
             margin-bottom: 20px;
             font-weight: 600;
         }
-        
+        /* Button Container */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 25px;
+        }
+
+        /* Base Button */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            text-align: center;
+            min-width: 180px;
+        }
+
+        /* Gold Code Request Button */
+        .btn-primary {
+            background-color: #D4AF37;
+            color: #1E3A27;
+        }
+        .btn-primary:hover {
+            background-color: #FAF9F5;
+            color: #1E3A27;
+            transform: translateY(-2px);
+        }
+
+        /* Transparent Store Browsing Button */
+        .btn-outline {
+            background-color: transparent;
+            color: #FAF9F5;
+            border: 2px solid #FAF9F5;
+        }
+        .btn-outline:hover {
+            background-color: #FAF9F5;
+            color: #1E3A27;
+            transform: translateY(-2px);
+        }
         /* Layout Grid Systems */
         .image-grid {
             display: grid;

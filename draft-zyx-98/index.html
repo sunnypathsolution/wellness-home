@@ -1,9 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Under Construction</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Portal | Sunnypath Solutions</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..700;1,400..700&display=swap" rel="stylesheet">
+   
+    <style>
+        body { 
+            font-family: Georgia, Garamond, "Times New Roman", serif; 
+            max-width: 780px; 
+            margin: 60px auto; 
+            padding: 0 24px; 
+            color: #2C3E2E; 
+            line-height: 1.8; 
+            background-color: #FAF9F5; 
+        }
+
+        /* Hero Banner Container */
+        .hero-banner {
+            position: relative;
+            background-image: url('banner_bk.jpg'); 
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(44, 62, 46, 0.05);
+        }
+
+        /* Dark overlay tint to make white text pop beautifully against the image */
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(30, 58, 39, 0.65); 
+            z-index: 1;
+        }
+
+        /* Forces content above the overlay */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 { 
+            font-family: "Playfair Display", Georgia, serif;
+            color: #FAF9F5 !important; 
+            font-size: 2.5rem; 
+            margin: 0 0 12px 0;
+            font-weight: 600;
+        }
+
+        .hero-content .subtitle {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 1.4rem; 
+            font-weight: 500;
+            color: #D4AF37 !important; 
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* Button Layout Configuration */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none !important;
+            border-radius: 6px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            text-align: center;
+            min-width: 240px;
+        }
+
+        /* Gold Code Request Button */
+        .btn-primary {
+            background-color: #D4AF37 !important;
+            color: #1E3A27 !important;
+        }
+        .btn-primary:hover {
+            background-color: #FAF9F5 !important;
+            color: #1E3A27 !important;
+            transform: translateY(-2px);
+        }
+
+        /* Transparent Store Browsing Button */
+        .btn-outline {
+            background-color: transparent !important;
+            color: #FAF9F5 !important;
+            border: 2px solid #FAF9F5 !important;
+        }
+        .btn-outline:hover {
+            background-color: #FAF9F5 !important;
+            color: #1E3A27 !important;
+            transform: translateY(-2px);
+        }
+
+        p { 
+            font-size: 1.05rem; 
+            margin-bottom: 24px;
+        }
+
+        .quote-box { 
+            background-color: #E8EFE9; 
+            border-left: 4px solid #D4AF37; 
+            padding: 20px 24px; 
+            margin: 35px 0; 
+            border-radius: 0 8px 8px 0; 
+        }
+        .quote-box p {
+            margin: 0;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #1E3A27;
+        }
+
+        h2 { 
+            font-family: "Playfair Display", Georgia, serif;
+            color: #1E3A27; 
+            font-size: 1.6rem; 
+            margin-top: 45px; 
+            margin-bottom: 20px;
+            font-weight: 600;
+        }     
+
+        /* Layout Grid Systems */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        .text-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media(min-width: 600px) {
+            .image-grid { grid-template-columns: 1fr 1fr; }
+            .text-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* Card Styling */
+        .card {
+            background: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(44, 62, 46, 0.03);
+            border: 1px solid #EAE8E2;
+            overflow: hidden;
+        }
+        .card-content {
+            padding: 24px;
+        }
+        .card h3 {
+            font-family: "Playfair Display", Georgia, serif;
+            margin-top: 0;
+            color: #1E3A27;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #556056;
+            margin: 0;
+            line-height: 1.65;
+        }
+
+        /* Image Specific Styles */
+        .card-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid #EAE8E2;
+        }
+        
+        footer {
+            margin-top: 80px;
+            border-top: 1px solid #EAE8E2;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #707A71;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Something exciting is coming soon!</h1>
+
+    <div class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Radiance, Curated by Sunnypath Solutions</h1>
+            <div class="subtitle">Your Path to Natural, Healthy Skin</div>
+            
+            <div class="button-group">
+                <a href="YOUR_EMAIL_FORM_LINK" class="btn btn-primary">
+                    Request 5% Off Code
+                </a>
+                <a href="https://mall.riman.com/sunnypathbeauty/" target="_blank" class="btn btn-outline">
+                    Browse Official Store ↗
+                </a>
+            </div>
+        </div>
+    </div>  
+    
+    <p>True success is built on a foundation of sustained vitality, deep internal alignment, and spatial harmony. This portal offers a curated entry point into wellness frameworks designed specifically for high-achievers who want to navigate life's transitions with grace, clarity, and unwavering energy.</p>
+    
+    <div class="quote-box">
+        <p>Elevate Your Career, Enrich Your Life    --    筑梦卓越职场，赋能精彩人生。</p>
+    </div>
+
+    <h2>Why We Chose this Wellness Line</h2>
+    <div class="image-grid">
+        <div class="card">
+            <img src="TR_DermatologyCream_DFLT.png" alt="Energy Alignment" class="card-image" style="height: 320px;">
+            <div class="card-content">
+                <h3>ICD Dermatology Cream - Patent Product</h3>
+            </div>
+        </div>
+        <div class="card">
+           <img src="SPS_Radiansome100Cream_Image_1.png" alt="Intentional Spaces" class="card-image" style="height: 320px;">
+            <div class="card-content">
+                <h3>ICD Radiansome™100 Microfluidizer Cream</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-grid">
+        <div class="card">
+            <div class="card-content">
+                <p>A unique, hypoallergenic hydrating cream that infuses moisture and nutrients deep into the skin, resulting in an unparalleled, glowing complexion.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <p>A rich cream powered by microfluidizes liposomes to deliver innate radiance and firmer elasticity.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Sunnypath Solutions. All rights reserved.
+    </footer>
+
 </body>
 </html>
